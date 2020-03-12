@@ -13,10 +13,9 @@ body {
 .navLink {
   text-decoration: none;
   font-weight: bold;
-  font-size: 17px;
-  margin-left: 50px;
-  margin-right: 50px;
-  padding: 10px;
+  font-size: 20px;
+  margin: 10px;
+  padding: 2px 7px 2px 7px;
   border-radius: 10px;
   color: rgb(255, 255, 255);
   border: 3px solid rgb(20, 49, 180);
@@ -25,3 +24,4 @@ body {
 .navLink:hover {
   background-color: rgb(20, 120, 150);
 }
+

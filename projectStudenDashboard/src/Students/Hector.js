@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Aranka = () => (
+const Hector = () => (
     <div>
-      <h1>Aranka</h1>
+      <h1>Hector</h1>
       <h3></h3>
     </div>
   );
 
-export default Aranka;
+export default Hector;
