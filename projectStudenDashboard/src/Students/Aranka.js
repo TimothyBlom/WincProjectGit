@@ -1,506 +1,174 @@
 import React from 'react';
 import { VictoryChart, VictoryAxis, VictoryLegend, VictoryGroup, VictoryLine } from 'victory';
-import CompareButtonBar from '../Components/CompareButtonBar';
+import StudentData from '../Components/StudentData'
 
-const StudentDataWeek1 = [
-  {
-    'Name': 'Evelyn',
-    'asignment': 'SCRUM',
-    'funRated': '4',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W1D1-1',
-    'funRated': '3',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W1D2-1',
-    'funRated': '3',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W1D2-2',
-    'funRated': '4',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W1D2-3',
-    'funRated': '3',
-    'dificulty': '2'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W1D2-4',
-    'funRated': '4',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W1D2-5',
-    'funRated': '4',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W1D3-1',
-    'funRated': '4',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W1D3-2',
-    'funRated': '4',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W1D3-4',
-    'funRated': '4',
-    'dificulty': '4'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W1D3-5',
-    'funRated': '4',
-    'dificulty': '4'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W1D3 - Project - Guess-the-number',
-    'funRated': '5',
-    'dificulty': '5'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W1D4-1',
-    'funRated': '5',
-    'dificulty': '4'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W1D4 - Project - Kleurentoggle',
-    'funRated': '4',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W1D5 - Project - Galgje',
-    'funRated': '3',
-    'dificulty': '3'
-  }
-];
+const week1FilterAranka = StudentData.filter((item) => {
+  return item.Name.includes('Aranka') && item.Asignment.includes('W1D')
+})
 
-const StudentDataWeek2 = [
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W2D1-1',
-    'funRated': '5',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W2D1-2',
-    'funRated': '5',
-    'dificulty': '2'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W2D2-1',
-    'funRated': '4',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W2D2-2',
-    'funRated': '4',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W2D2-3',
-    'funRated': '4',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W2D3-1',
-    'funRated': '4',
-    'dificulty': '4'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W2D3-2',
-    'funRated': '3',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W2D3-3',
-    'funRated': '4',
-    'dificulty': '4'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W2D4-1',
-    'funRated': '3',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W2D4-2',
-    'funRated': '4',
-    'dificulty': '4'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W2D4-3',
-    'funRated': '3',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W2D5 - Project - Filmzoeker',
-    'funRated': '4',
-    'dificulty': '3'
-  },
-];
+const week2FilterAranka = StudentData.filter((item) => {
+  return item.Name.includes('Aranka') && item.Asignment.includes('W2D')
+})
 
-const StudentDataWeek3 = [
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W3D1-1',
-    'funRated': '4',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W3D1-2',
-    'funRated': '4',
-    'dificulty': '2'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W3D1-3',
-    'funRated': '4',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W3D1-4',
-    'funRated': '3',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W3D2-1',
-    'funRated': '4',
-    'dificulty': '2'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W3D2-2',
-    'funRated': '3',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W3D2-3',
-    'funRated': '5',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W3D3-1',
-    'funRated': '3',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W3D3-2',
-    'funRated': '5',
-    'dificulty': '4'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W3D3-3',
-    'funRated': '5',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W3D3-4',
-    'funRated': '5',
-    'dificulty': '4'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W3D4-1',
-    'funRated': '5',
-    'dificulty': '5'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W3D4-2',
-    'funRated': '5',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W3D5 - Project - Todo-List',
-    'funRated': '5',
-    'dificulty': '2'
-  },
-];
+const week3FilterAranka = StudentData.filter((item) => {
+  return item.Name.includes('Aranka') && item.Asignment.includes('W3D')
+})
 
-const StudentDataWeek456 = [
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W4D2-1',
-    'funRated': '5',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W4D2-2',
-    'funRated': '5',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W4D2-3',
-    'funRated': '5',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W4D2-4',
-    'funRated': '5',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W4D3-1',
-    'funRated': '5',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W4D3-2',
-    'funRated': '5',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W4D3-3',
-    'funRated': '5',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W4D3-4',
-    'funRated': '5',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W4D3-5',
-    'funRated': '5',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W4D3 - Project - Next-Level CSS',
-    'funRated': '5',
-    'dificulty': '1'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W5D4-1',
-    'funRated': '4',
-    'dificulty': '3'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W5D5 - Project - Lil_Playlist',
-    'funRated': '3',
-    'dificulty': '4'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W6D1-1',
-    'funRated': '5',
-    'dificulty': '5'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W6D2-1',
-    'funRated': '3',
-    'dificulty': '4'
-  },
-  {
-    'Name': 'Evelyn',
-    'asignment': 'W6D2 - Project - Eindopdracht',
-    'funRated': '5',
-    'dificulty': '5'
-  },
-];
+//jep, onderstaande is niet dry
+const week456FilterAranka = StudentData.filter((item) => {
+  return item.Name.includes('Aranka') && item.Asignment.includes('W4D') || item.Name.includes('Aranka') && item.Asignment.includes('W5D') || item.Name.includes('Aranka') && item.Asignment.includes('W6D')
+})
 
 const Aranka = () => (
   <div>
     <h1>Aranka</h1>
-    <VictoryChart width={600} animate={{ duration: 1000 }}>
-    <VictoryLegend 
-      x={75} 
-      y={0}
-      title="Week 1"
-      style={{title: {fill: 'white'}}}
-      orientation="horizontal"
-      colorScale={"blue"}
-      data={[
-        {name: 'fun', labels: {fill: 'white', fontSize: 10}},
-        {name: 'dificulty', labels: {fill: 'white', fontSize: 10}}
-      ]}
-    />
-    <VictoryAxis 
-      style={{tickLabels: {angle: 45, fontSize: 5, fill: 'white'}}}
-      tickValues={["SCRUM", "W1D1-1", "W1D2-1", "W1D2-2", "W1D2-3", 'W1D2-4', 'W1D2-5', 'W1D3-1', 'W1D3-2', 'W1D3-4', 'W1D3-5', 'W1D3 - Project - Guess-the-number', 'W1D4-1', 'W1D4 - Project - Kleurentoggle', 'W1D5 - Project - Galgje']}
-    />
-    <VictoryAxis 
-      dependentAxis
-      style={{tickLabels: {fontSize: 10, fill: 'white'}}}
-      tickFormat={['1', '2', '3', '4', '5']}
-    />
-    <VictoryGroup offset={12} colorScale={"blue"} style={{data: {width: 10}}}>
-    <VictoryLine
-      data={StudentDataWeek1}
-      x={"asignment"}
-      y={"funRated"}
-    />
-    <VictoryLine
-      data={StudentDataWeek1}
-      x={"asignment"}
-      y={"dificulty"}
-    />
-    </VictoryGroup>
-    </VictoryChart>
-    <CompareButtonBar />
+    <div className='chart'>
+      <VictoryChart width={600} animate={{ duration: 750 }}>
+      <VictoryLegend 
+        x={75} 
+        y={0}
+        title="Week 1"
+        style={{title: {fill: 'white'}}}
+        orientation="horizontal"
+        colorScale={"blue"}
+        data={[
+          {name: 'Fun', labels: {fill: 'white', fontSize: 10}},
+          {name: 'Dificulty', labels: {fill: 'white', fontSize: 10}}
+        ]}
+      />
+      <VictoryAxis 
+        style={{tickLabels: {angle: 45, fontSize: 5, fill: 'white'}}}
+      />
+      <VictoryAxis 
+        dependentAxis
+        style={{tickLabels: {fontSize: 10, fill: 'white'}}}
+        tickFormat={['1', '2', '3', '4', '5']}
+      />
+      <VictoryGroup colorScale={"blue"} style={{data: {width: 10}}}>
+      <VictoryLine
+        data={week1FilterAranka}
+        x={"Asignment"}
+        y={"Fun"}
+      />
+      <VictoryLine
+        data={week1FilterAranka}
+        x={"Asignment"}
+        y={"Dificulty"}
+      />
+      </VictoryGroup>
+      </VictoryChart>
+    </div>
 
-    <VictoryChart width={600} animate={{ duration: 1000 }}>
-    <VictoryLegend 
-      x={75} 
-      y={0}
-      title="Week 2"
-      style={{title: {fill: 'white'}}}
-      orientation="horizontal"
-      colorScale={"blue"}
-      data={[
-        {name: 'fun', labels: {fill: 'white', fontSize: 10}},
-        {name: 'dificulty', labels: {fill: 'white', fontSize: 10}}
-      ]}
-    />
-    <VictoryAxis 
-      style={{tickLabels: {angle: 45, fontSize: 5, fill: 'white'}}}
-      tickValues={['W2D1-1', 'W2D1-2', 'W2D2-1', 'W2D2-2', 'W2D2-3', 'W2D3-1', 'W2D3-2', 'W2D3-3', 'W2D4-1', 'W2D4-2', 'W2D4-3', 'W2D5 - Project - Filmzoeker']}
-    />
-    <VictoryAxis 
-      dependentAxis
-      style={{tickLabels: {fontSize: 10, fill: 'white'}}}
-      tickFormat={['1', '2', '3', '4', '5']}
-    />
-    <VictoryGroup offset={12} colorScale={"blue"} style={{data: {width: 10}}}>
-    <VictoryLine
-      data={StudentDataWeek2}
-      x={"asignment"}
-      y={"funRated"}
-    />
-    <VictoryLine
-      data={StudentDataWeek2}
-      x={"asignment"}
-      y={"dificulty"}
-    />
-    </VictoryGroup>
-    </VictoryChart>
-    <CompareButtonBar />
+    <div className='chart'>
+      <VictoryChart width={600} animate={{ duration: 750 }}>
+      <VictoryLegend 
+        x={75} 
+        y={0}
+        title="Week 2"
+        style={{title: {fill: 'white'}}}
+        orientation="horizontal"
+        colorScale={"blue"}
+        data={[
+          {name: 'Fun', labels: {fill: 'white', fontSize: 10}},
+          {name: 'Dificulty', labels: {fill: 'white', fontSize: 10}}
+        ]}
+      />
+      <VictoryAxis 
+        style={{tickLabels: {angle: 45, fontSize: 5, fill: 'white'}}}
+      />
+      <VictoryAxis 
+        dependentAxis
+        style={{tickLabels: {fontSize: 10, fill: 'white'}}}
+        tickFormat={['1', '2', '3', '4', '5']}
+      />
+      <VictoryGroup colorScale={"blue"} style={{data: {width: 10}}}>
+      <VictoryLine
+        data={week2FilterAranka}
+        x={"Asignment"}
+        y={"Fun"}
+      />
+      <VictoryLine
+        data={week2FilterAranka}
+        x={"Asignment"}
+        y={"Dificulty"}
+      />
+      </VictoryGroup>
+      </VictoryChart>
+    </div>
 
-    <VictoryChart width={600} animate={{ duration: 1000 }}>
-    <VictoryLegend 
-      x={75} 
-      y={0}
-      title="Week 3"
-      style={{title: {fill: 'white'}}}
-      orientation="horizontal"
-      colorScale={"blue"}
-      data={[
-        {name: 'fun', labels: {fill: 'white', fontSize: 10}},
-        {name: 'dificulty', labels: {fill: 'white', fontSize: 10}}
-      ]}
-    />
-    <VictoryAxis 
-      style={{tickLabels: {angle: 45, fontSize: 5, fill: 'white'}}}
-      tickValues={['W3D1-1', 'W3D1-2', 'W3D1-3', 'W3D1-4', 'W3D2-1', 'W3D2-2', 'W3D2-3', 'W3D3-1', 'W3D3-2', 'W3D3-3', 'W3D3-4', 'W3D4-1', 'W3D4-2', 'W3D5 - Project - Todo-List']}
-    />
-    <VictoryAxis 
-      dependentAxis
-      style={{tickLabels: {fontSize: 10, fill: 'white'}}}
-      tickFormat={['1', '2', '3', '4', '5']}
-    />
-    <VictoryGroup offset={12} colorScale={"blue"} style={{data: {width: 10}}}>
-    <VictoryLine
-      data={StudentDataWeek3}
-      x={"asignment"}
-      y={"funRated"}
-    />
-    <VictoryLine
-      data={StudentDataWeek3}
-      x={"asignment"}
-      y={"dificulty"}
-    />
-    </VictoryGroup>
-    </VictoryChart>
-    <CompareButtonBar />
+    <div className='chart'>
+      <VictoryChart width={600} animate={{ duration: 750 }}>
+      <VictoryLegend 
+        x={75} 
+        y={0}
+        title="Week 3"
+        style={{title: {fill: 'white'}}}
+        orientation="horizontal"
+        colorScale={"blue"}
+        data={[
+          {name: 'Fun', labels: {fill: 'white', fontSize: 10}},
+          {name: 'Dificulty', labels: {fill: 'white', fontSize: 10}}
+        ]}
+      />
+      <VictoryAxis 
+        style={{tickLabels: {angle: 45, fontSize: 5, fill: 'white'}}}
+      />
+      <VictoryAxis 
+        dependentAxis
+        style={{tickLabels: {fontSize: 10, fill: 'white'}}}
+        tickFormat={['1', '2', '3', '4', '5']}
+      />
+      <VictoryGroup colorScale={"blue"} style={{data: {width: 10}}}>
+      <VictoryLine
+        data={week3FilterAranka}
+        x={"Asignment"}
+        y={"Fun"}
+      />
+      <VictoryLine
+        data={week3FilterAranka}
+        x={"Asignment"}
+        y={"Dificulty"}
+      />
+      </VictoryGroup>
+      </VictoryChart>
+    </div>
 
-    <VictoryChart width={600} animate={{ duration: 1000 }}>
-    <VictoryLegend 
-      x={75} 
-      y={0}
-      title="Week 4, 5, 6"
-      style={{title: {fill: 'white'}}}
-      orientation="horizontal"
-      colorScale={"blue"}
-      data={[
-        {name: 'fun', labels: {fill: 'white', fontSize: 10}},
-        {name: 'dificulty', labels: {fill: 'white', fontSize: 10}}
-      ]}
-    />
-    <VictoryAxis 
-      style={{tickLabels: {angle: 45, fontSize: 5, fill: 'white'}}}
-      tickValues={['W4D2-1', 'W4D2-2', 'W4D2-3', 'W4D2-4', 'W4D3-1', 'W4D3-2', 'W4D3-3', 'W4D3-4', 'W4D3-5', 'W4D3 - Project - Next-Level CSS', 'W5D4-1', 'W5D5 - Project - Lil_Playlist', 'W6D1-1', 'W6D2-1', 'W6D2 - Project - Eindopdracht'
-    ]}
-    />
-    <VictoryAxis 
-      dependentAxis
-      style={{tickLabels: {fontSize: 10, fill: 'white'}}}
-      tickFormat={['1', '2', '3', '4', '5']}
-    />
-    <VictoryGroup offset={12} colorScale={"blue"} style={{data: {width: 10}}}>
-    <VictoryLine
-      data={StudentDataWeek456}
-      x={"asignment"}
-      y={"funRated"}
-    />
-    <VictoryLine
-      data={StudentDataWeek456}
-      x={"asignment"}
-      y={"dificulty"}
-    />
-    </VictoryGroup>
-    </VictoryChart>
-    <CompareButtonBar />
+    <div className='chart'>
+      <VictoryChart width={600} animate={{ duration: 750 }}>
+      <VictoryLegend 
+        x={75} 
+        y={0}
+        title="Week 4, 5, 6"
+        style={{title: {fill: 'white'}}}
+        orientation="horizontal"
+        colorScale={"blue"}
+        data={[
+          {name: 'Fun', labels: {fill: 'white', fontSize: 10}},
+          {name: 'Dificulty', labels: {fill: 'white', fontSize: 10}}
+        ]}
+      />
+      <VictoryAxis 
+        style={{tickLabels: {angle: 45, fontSize: 5, fill: 'white'}}}
+      />
+      <VictoryAxis 
+        dependentAxis
+        style={{tickLabels: {fontSize: 10, fill: 'white'}}}
+        tickFormat={['1', '2', '3', '4', '5']}
+      />
+      <VictoryGroup colorScale={"blue"} style={{data: {width: 10}}}>
+      <VictoryLine
+        data={week456FilterAranka}
+        x={"Asignment"}
+        y={"Fun"}
+      />
+      <VictoryLine
+        data={week456FilterAranka}
+        x={"Asignment"}
+        y={"Dificulty"}
+      />
+      </VictoryGroup>
+      </VictoryChart>
+    </div>
   </div>
 );
 
