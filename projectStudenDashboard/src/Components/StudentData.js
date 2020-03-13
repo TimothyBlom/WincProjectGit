@@ -1,6 +1,6 @@
 import React from 'react';
 
-const StudentData = [
+export const StudentData = [
   {
     'Name': 'Evelyn',
     'asignment': 'SCRUM',
@@ -337,12 +337,6 @@ const StudentData = [
     'funRated': '5',
     'dificulty': ''
   },
-  {
-    'Name': 'Evelyn',
-    'asignment': '',
-    'funRated': '',
-    'dificulty': ''
-  },
 ];
 
-export default StudentData;
+export default {StudentData};

@@ -5,7 +5,7 @@ body {
 }
 
 #nav {
-  background-color: rgb(48, 166, 202);
+  background-color: rgb(27, 104, 155);
   padding-bottom: 25px; 
   padding-top: 25px;
 }
@@ -18,7 +18,7 @@ body {
   padding: 2px 7px 2px 7px;
   border-radius: 10px;
   color: rgb(255, 255, 255);
-  border: 3px solid rgb(20, 49, 180);
+  border: 3px solid rgb(29, 50, 145);
 }
 
 .navLink:hover {
