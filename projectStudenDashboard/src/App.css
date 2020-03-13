@@ -25,3 +25,24 @@ body {
   background-color: rgb(20, 120, 150);
 }
 
+.compareButtonsBar {
+  margin-bottom: 100px;
+}
+
+.compareButtonsBar h5 {
+  display: inline-block;
+}
+
+.compareButtons, .funToggleButton, .dificultyToggleButton {
+  background-color:  rgb(31, 31, 31);
+  color: white;
+  border-radius: 5px;
+  border: 2px solid rgb(29, 50, 145);
+  margin: 0px 7px 5px 7px;
+}
+
+.funToggleButton, .dificultyToggleButton {
+  font-size: 15px;
+  display: block;
+  margin-left: 120px;
+}
